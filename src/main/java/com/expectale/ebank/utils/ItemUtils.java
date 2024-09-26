@@ -39,6 +39,7 @@ public class ItemUtils {
         ItemMeta itemMeta = itemStack.getItemMeta();
         if (itemMeta == null) return itemStack;
         List<String> lore = new ArrayList<>();
+        if (itemMeta.getLore() == null) return itemStack;
         for (String line : itemMeta.getLore()) {
             double balance = economy.getBalance(player);
             lore.add(line.replace("%time-left-before-interest%", PlayerInterestRegistry.timeLeft(player))
