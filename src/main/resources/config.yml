@@ -42,6 +42,7 @@ Message:
   Bank-not-enough-money: "§cThe bank has not enough money"
   Create-password: "§aCreate your bank password :"
   Type-password: "§aType the bank's password :"
+  Reset-password: "§aThe password has been reset"
   Withdraw:
     Amount: "§aType the amount you want to withdraw"
     Success: "§aWithdraw success"
@@ -97,7 +98,7 @@ Menu:
   Bank:
     #Strucutre can have 1 to 6 row
     Structure:
-      - "x x x x x x x x i"
+      - "z x x x x x x x i"
       - "x x d x w x l x x"
       - "x x x x x x x x x"
       - "x x x x c x x x a"
@@ -154,6 +155,14 @@ Menu:
           display-name: §aBuy access card
           lore:
             - '§7Access card price %card-price%'
+          custom-model-data: 0
+      z:
+        ==: org.bukkit.inventory.ItemStack
+        type: ANVIL
+        meta:
+          ==: ItemMeta
+          meta-type: UNSPECIFIC
+          display-name: §aReset Password
           custom-model-data: 0
   Creation-menu:
     #Strucutre can have 1 to 6 row

@@ -5,6 +5,7 @@ import com.expectale.ebank.item.BankItem;
 import com.expectale.ebank.menus.buttons.BackGroundItem;
 import com.expectale.ebank.menus.buttons.CloseButton;
 import com.expectale.ebank.registry.BankUserRegistry;
+import com.expectale.ebank.registry.ChatInteractionRegistry;
 import com.expectale.ebank.services.ConfigurationService;
 import com.expectale.ebank.services.EconomyService;
 import com.expectale.ebank.utils.ItemUtils;
@@ -53,6 +54,7 @@ public class BankMenu extends AbstractBankMenu {
             .addIngredient('i', new InfoButton())
             .addIngredient('c', new CloseButton())
             .addIngredient('a', new AccessCardButton())
+            .addIngredient('z', new PassWordButton())
             .build();
     }
     
@@ -149,6 +151,25 @@ public class BankMenu extends AbstractBankMenu {
                 return;
             }
             economy.withdrawPlayer(player, ConfigurationService.CARD_PRICE);
+        }
+    }
+    
+    class PassWordButton extends AbstractItem {
+        
+        @Override
+        public ItemProvider getItemProvider() {
+            return new ItemBuilder(ItemUtils.formatMenuItem(ConfigurationService.MENU_BANK_ITEM_CODE.clone(), viewer, bankAccount));
+        }
+        
+        @Override
+        public void handleClick(@NotNull ClickType clickType, @NotNull Player player, @NotNull InventoryClickEvent event) {
+            player.playSound(player.getLocation(), Sound.UI_BUTTON_CLICK, 0.3f, 1f);
+            player.closeInventory();
+            player.sendMessage(ConfigurationService.MESSAGE_TYPE_PASSWORD);
+            ChatInteractionRegistry.add(player, (p, message) -> {
+                bankAccount.setAccessCode(message);
+                player.sendMessage(ConfigurationService.MESSAGE_RESET_PASSWORD);
+            });
         }
     }
     

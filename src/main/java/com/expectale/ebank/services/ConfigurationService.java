@@ -38,6 +38,7 @@ public class ConfigurationService {
     public static ItemStack MENU_BANK_ITEM_WITHDRAW = ItemUtils.formatItem(CONFIG.getItemStack("Menu.Bank.Items.w"));
     public static ItemStack MENU_BANK_ITEM_LOGS = ItemUtils.formatItem(CONFIG.getItemStack("Menu.Bank.Items.l"));
     public static ItemStack MENU_BANK_ITEM_ACCESS_CARD = ItemUtils.formatItem(CONFIG.getItemStack("Menu.Bank.Items.a"));
+    public static ItemStack MENU_BANK_ITEM_CODE = ItemUtils.formatItem(CONFIG.getItemStack("Menu.Bank.Items.z"));
     
     public static List<String> MENU_CREATION_STRUCTURE = CONFIG.getStringList("Menu.Creation-menu.Structure");
     public static String MENU_CREATION_TITLE = CONFIG.getString("Menu.Creation-menu.Title");
@@ -64,6 +65,7 @@ public class ConfigurationService {
     public static String MESSAGE_BANK_NOT_ENOUGH_MONEY = CONFIG.getString("Message.Bank-not-enough-money");
     public static String MESSAGE_CREATE_PASSWORD = CONFIG.getString("Message.Create-password");
     public static String MESSAGE_TYPE_PASSWORD = CONFIG.getString("Message.Type-password");
+    public static String MESSAGE_RESET_PASSWORD = CONFIG.getString("Message.Reset-password");
     public static String MESSAGE_WITHDRAW_AMOUNT = CONFIG.getString("Message.Withdraw.Amount");
     public static String MESSAGE_WITHDRAW_SUCCESS = CONFIG.getString("Message.Withdraw.Success");
     public static String MESSAGE_DEPOSIT_AMOUNT = CONFIG.getString("Message.Deposit.Amount");
