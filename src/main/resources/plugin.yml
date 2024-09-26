@@ -1,0 +1,29 @@
+name: EBank
+version: '${version}'
+main: com.expectale.ebank.EBank
+api-version: '1.21'
+
+permissions:
+  ebank.*:
+    description: "Give all the EBank plugin permission"
+    default: op
+    children:
+      ebank.command.bank.other: true
+      ebank.command.bank.create: true
+      ebank.command.bank: true
+      ebank.bank.log_bypass: true
+      ebank.bank.password_bypass: false
+
+commands:
+  ebank:
+    description: Open the bank menu of another player
+    usage: /bank <player>
+    permission: ebank.command.bank.other
+  bank:
+    description: Open the bank menu
+    usage: /bank
+    permission: ebank.command.bank
+  bankcreate:
+    description: Open the bank create menu
+    usage: /bankcreate
+    permission: ebank.command.bank.create

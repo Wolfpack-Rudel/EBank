@@ -1,0 +1,280 @@
+#Custom permissions :
+#   ebank.* : give all the ebank plugin permissions
+#   ebank.command.bank.other : Allow player to execute /ebank <player> command
+#   ebank.command.bank.create : Allow player to execute /bankcreate command
+#   ebank.command.bank : Allow player to execute /bank command
+#   ebank.bank.log_bypass : Allow player to not print log when interact with the bank
+#   ebank.bank.password_bypass : Allow a player to bypass all passwords
+
+#Setup MySQL connection
+MySQLConnection:
+  Host: "localhost"
+  Port: 3306
+  Database: "MySQL"
+  User: "root"
+  Password: "1234"
+
+Account:
+  #Online time required to earn interest (in hour) (it can be a decimal Ex : 0.5)
+  Interest-time: 2
+  #The interest the player earns (in percent) (it can be a decimal)
+  Interest: 10
+  Account-creation-price: 10000
+  Card-price: 10000
+  #The amount of log display on the bank menu
+  Log-amount: 10
+  #%owner% will display the name of the bank owner
+  Card:
+    ==: org.bukkit.inventory.ItemStack
+    type: PAPER
+    meta:
+      ==: ItemMeta
+      meta-type: UNSPECIFIC
+      display-name: §aBank card
+      lore:
+        - '§7%owner% card bank'
+      custom-model-data: 0
+
+Message:
+  Not-enough-money: "§cYou don't have enough money"
+  Wrong-password: "§cWrong password"
+  Not-enough-inventory_space: "§cYou don't have any space left on your inventory"
+  Bank-not-enough-money: "§cThe bank has not enough money"
+  Create-password: "§aCreate your bank password :"
+  Type-password: "§aType the bank's password :"
+  Withdraw:
+    Amount: "§aType the amount you want to withdraw"
+    Success: "§aWithdraw success"
+  Deposit:
+    Amount: "§aType the amount you want to deposit"
+    Success: "§aDeposit success"
+  Format-error: "§cThe amount have to be an integer"
+  Interest: "Bank interest"
+
+Lore:
+  Log-format: "%logo% §6%amount%§7, §e%date% §7by %source%"
+  Date-format: "yy-MM-dd HH:mm"
+
+#Item lore placeholders:
+#%interest% Display the amount of interest the player will earn
+#%interest-time% Display the amount of time the player need to get interest
+#%time-left-before-interest% Display the amount of time left before the next interest
+#%amount% Display the amount in the bank
+#%amount-50% Display 50% of the amount of the bank
+#%amount-25% Display 25% of the amount of the bank
+#%card-price% Display card price
+#%account-price% Display the account price
+#%player-money-100% Display the amount of money the player have
+#%player-money-50% Display 50% of the amount of money the player have
+#%player-money-25% Display 25% of the amount of money the player have
+Menu:
+  Common-items:
+    #Visit this link to get more information about itemstack https://www.spigotmc.org/wiki/itemstack-serialization/
+    x:
+      ==: org.bukkit.inventory.ItemStack
+      type: STONE
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: §a
+        custom-model-data: 0
+    b:
+      ==: org.bukkit.inventory.ItemStack
+      type: ARROW
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: §cBack
+        custom-model-data: 0
+    c:
+      ==: org.bukkit.inventory.ItemStack
+      type: BARRIER
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: §cClose
+        custom-model-data: 0
+  Bank:
+    #Strucutre can have 1 to 6 row
+    Structure:
+      - "x x x x x x x x i"
+      - "x x d x w x l x x"
+      - "x x x x x x x x x"
+      - "x x x x c x x x a"
+    Title: "Bank menu"
+    Items:
+      i:
+        ==: org.bukkit.inventory.ItemStack
+        type: COBBLESTONE
+        meta:
+          ==: ItemMeta
+          meta-type: UNSPECIFIC
+          display-name: §aInformations
+          lore:
+            - '§7The bank rewards you every %interest-time%'
+            - '§7hours by %interest%% of you total bank amount'
+          custom-model-data: 0
+      d:
+        ==: org.bukkit.inventory.ItemStack
+        type: CHEST
+        meta:
+          ==: ItemMeta
+          meta-type: UNSPECIFIC
+          display-name: §aDeposit Coins
+          lore:
+            - '§7Current balance %amount%'
+            - '§7%time-left-before-interest% hours before interest'
+          custom-model-data: 0
+      w:
+        ==: org.bukkit.inventory.ItemStack
+        type: DROPPER
+        meta:
+          ==: ItemMeta
+          meta-type: UNSPECIFIC
+          display-name: §aWithdraw Coins
+          lore:
+            - '§7Current balance %amount%'
+          custom-model-data: 0
+      l:
+        ==: org.bukkit.inventory.ItemStack
+        type: GOLD_INGOT
+        meta:
+          ==: ItemMeta
+          meta-type: UNSPECIFIC
+          display-name: §aRecent transactions
+          lore:
+            - '§7'
+          custom-model-data: 0
+      a:
+        ==: org.bukkit.inventory.ItemStack
+        type: GOLD_INGOT
+        meta:
+          ==: ItemMeta
+          meta-type: UNSPECIFIC
+          display-name: §aBuy access card
+          lore:
+            - '§7Access card price %card-price%'
+          custom-model-data: 0
+  Creation-menu:
+    #Strucutre can have 1 to 6 row
+    Structure:
+      - "x x x x x x x x x"
+      - "x x x x c x x x x"
+      - "x x x x x x x x x"
+      - "x x x x x x x x x"
+    Title: "Bank create menu"
+    Items:
+      c:
+        ==: org.bukkit.inventory.ItemStack
+        type: GOLD_INGOT
+        meta:
+          ==: ItemMeta
+          meta-type: UNSPECIFIC
+          display-name: §aAccount creation
+          lore:
+            - '§7Create your account for %account-price%'
+          custom-model-data: 0
+  Deposit:
+    #Strucutre can have 1 to 6 row
+    Structure:
+      - "x x x x x x x x x"
+      - "x 1 x 2 x 3 x 4 x"
+      - "x x x x x x x x x"
+      - "x x x x b x x x x"
+    Title: "Deposit menu"
+    Items:
+      1:
+        ==: org.bukkit.inventory.ItemStack
+        type: CHEST
+        meta:
+          ==: ItemMeta
+          meta-type: UNSPECIFIC
+          display-name: §aDeposit all
+          lore:
+            - '§7Current balance %amount%'
+            - '§7Deposit all your money %player-money-100%'
+          custom-model-data: 0
+      2:
+        ==: org.bukkit.inventory.ItemStack
+        type: CHEST
+        meta:
+          ==: ItemMeta
+          meta-type: UNSPECIFIC
+          display-name: §aDeposit half
+          lore:
+            - '§7Current balance %amount%'
+            - '§7Deposit the half of your money %player-money-50%'
+          custom-model-data: 0
+      3:
+        ==: org.bukkit.inventory.ItemStack
+        type: CHEST
+        meta:
+          ==: ItemMeta
+          meta-type: UNSPECIFIC
+          display-name: §aDeposit 25%
+          lore:
+            - '§7Current balance %amount%'
+            - '§7Deposit 25% of your money %player-money-25%'
+          custom-model-data: 0
+      4:
+        ==: org.bukkit.inventory.ItemStack
+        type: SIGN
+        meta:
+          ==: ItemMeta
+          meta-type: UNSPECIFIC
+          display-name: §aSpecific amount
+          lore:
+            - '§7Current balance %amount%'
+          custom-model-data: 0
+  Withdraw:
+    #Strucutre can have 1 to 6 row
+    Structure:
+      - "x x x x x x x x x"
+      - "x 1 x 2 x 3 x 4 x"
+      - "x x x x x x x x x"
+      - "x x x x b x x x x"
+    Title: "Withdraw menu"
+    Items:
+      1:
+        ==: org.bukkit.inventory.ItemStack
+        type: DROPPER
+        meta:
+          ==: ItemMeta
+          meta-type: UNSPECIFIC
+          display-name: §Withdraw all
+          lore:
+            - '§7Current balance %amount%'
+            - '§7Withdraw all the money %amount%'
+          custom-model-data: 0
+      2:
+        ==: org.bukkit.inventory.ItemStack
+        type: DROPPER
+        meta:
+          ==: ItemMeta
+          meta-type: UNSPECIFIC
+          display-name: §Withdraw half
+          lore:
+            - '§7Current balance %amount%'
+            - '§7Withdraw 50% of the money %amount-50%'
+          custom-model-data: 0
+      3:
+        ==: org.bukkit.inventory.ItemStack
+        type: DROPPER
+        meta:
+          ==: ItemMeta
+          meta-type: UNSPECIFIC
+          display-name: §Withdraw 25%
+          lore:
+            - '§7Current balance %amount%'
+            - '§7Withdraw 25% of the money %amount-25%'
+          custom-model-data: 0
+      4:
+        ==: org.bukkit.inventory.ItemStack
+        type: SIGN
+        meta:
+          ==: ItemMeta
+          meta-type: UNSPECIFIC
+          display-name: §aSpecific amount
+          lore:
+            - '§7Current balance %amount%'
+          custom-model-data: 0
