@@ -164,6 +164,10 @@ public class BankMenu extends AbstractBankMenu {
         @Override
         public void handleClick(@NotNull ClickType clickType, @NotNull Player player, @NotNull InventoryClickEvent event) {
             player.playSound(player.getLocation(), Sound.UI_BUTTON_CLICK, 0.3f, 1f);
+            if (player.getUniqueId() != bankAccount.getOwner() && !player.hasPermission("ebank.bank.password_bypass")) {
+                player.sendMessage(ConfigurationService.MESSAGE_RESET_PASSWORD_NO_PERM);
+                return;
+            }
             player.closeInventory();
             player.sendMessage(ConfigurationService.MESSAGE_TYPE_PASSWORD);
             ChatInteractionRegistry.add(player, (p, message) -> {

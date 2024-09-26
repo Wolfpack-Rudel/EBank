@@ -66,6 +66,7 @@ public class ConfigurationService {
     public static String MESSAGE_CREATE_PASSWORD = CONFIG.getString("Message.Create-password");
     public static String MESSAGE_TYPE_PASSWORD = CONFIG.getString("Message.Type-password");
     public static String MESSAGE_RESET_PASSWORD = CONFIG.getString("Message.Reset-password");
+    public static String MESSAGE_RESET_PASSWORD_NO_PERM = CONFIG.getString("Message.Reset-password-no-permission");
     public static String MESSAGE_WITHDRAW_AMOUNT = CONFIG.getString("Message.Withdraw.Amount");
     public static String MESSAGE_WITHDRAW_SUCCESS = CONFIG.getString("Message.Withdraw.Success");
     public static String MESSAGE_DEPOSIT_AMOUNT = CONFIG.getString("Message.Deposit.Amount");

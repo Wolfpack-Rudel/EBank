@@ -43,6 +43,7 @@ Message:
   Create-password: "§aCreate your bank password :"
   Type-password: "§aType the bank's password :"
   Reset-password: "§aThe password has been reset"
+  Reset-password-no-permission: "§cYou don't have permission to reset the password"
   Withdraw:
     Amount: "§aType the amount you want to withdraw"
     Success: "§aWithdraw success"
