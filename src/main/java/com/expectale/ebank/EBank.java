@@ -41,8 +41,8 @@ public final class EBank extends JavaPlugin {
         this.getCommand("bankcreate").setExecutor(new BankCreateCommand());
         
         DatabaseService.connect();
-        /*BankService.enable();
-        LogService.enable();*/
+        BankService.enable();
+        LogService.enable();
     }
     
     public static EBank getINSTANCE() {
