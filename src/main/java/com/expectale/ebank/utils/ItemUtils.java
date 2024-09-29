@@ -68,7 +68,6 @@ public class ItemUtils {
     }
     
     public static ItemStack deserialize(String path) {
-        System.out.println(path);
         FileConfiguration config = EBank.getINSTANCE().getConfig();
         if (config.get(path) instanceof ConfigurationSection configurationSection) {
             return deserialize(configurationSection.getValues(false));
