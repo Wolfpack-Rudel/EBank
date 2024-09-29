@@ -24,7 +24,7 @@ public class ConfigurationService {
     public static int ACCOUNT_PRICE = CONFIG.getInt("Account.Account-creation-price");
     public static int CARD_PRICE = CONFIG.getInt("Account.Card-price");
     public static int LOG_AMOUNT = CONFIG.getInt("Account.Log-amount");
-    public static ItemStack CARD_ITEM = CONFIG.getItemStack("Account.Card");
+    public static ItemStack CARD_ITEM = ItemUtils.deserialize(("Account.Card"));
     
     //Menus
     public static ItemStack MENU_COMMON_CLOSE = ItemUtils.formatItem(ItemUtils.deserialize(("Menu.Common-items.c")));
