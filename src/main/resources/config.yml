@@ -76,7 +76,7 @@ Menu:
     x:
       ==: org.bukkit.inventory.ItemStack
       v: 3955
-      type: STONE
+      type: BLACK_STAINED_GLASS_PANE
       meta:
         ==: ItemMeta
         meta-type: UNSPECIFIC
@@ -112,7 +112,7 @@ Menu:
       i:
         ==: org.bukkit.inventory.ItemStack
         v: 3955
-        type: COBBLESTONE
+        type: STONE
         meta:
           ==: ItemMeta
           meta-type: UNSPECIFIC
@@ -243,7 +243,7 @@ Menu:
       4:
         ==: org.bukkit.inventory.ItemStack
         v: 3955
-        type: SIGN
+        type: OAK_SIGN
         meta:
           ==: ItemMeta
           meta-type: UNSPECIFIC
@@ -299,7 +299,7 @@ Menu:
       4:
         ==: org.bukkit.inventory.ItemStack
         v: 3955
-        type: SIGN
+        type: OAK_SIGN
         meta:
           ==: ItemMeta
           meta-type: UNSPECIFIC
