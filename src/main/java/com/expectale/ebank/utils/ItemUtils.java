@@ -1,17 +1,29 @@
 package com.expectale.ebank.utils;
 
+import com.expectale.ebank.EBank;
 import com.expectale.ebank.bank.BankAccount;
 import com.expectale.ebank.registry.PlayerInterestRegistry;
 import com.expectale.ebank.services.ConfigurationService;
 import com.expectale.ebank.services.EconomyService;
 import net.milkbowl.vault.economy.Economy;
+import org.bukkit.Bukkit;
+import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
+import org.bukkit.Registry;
+import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.material.MaterialData;
+import org.jetbrains.annotations.NotNull;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 
 public class ItemUtils {
     
@@ -53,6 +65,63 @@ public class ItemUtils {
         itemMeta.setLore(lore);
         itemStack.setItemMeta(itemMeta);
         return itemStack;
+    }
+    
+    public static ItemStack deserialize(String path) {
+        System.out.println(path);
+        FileConfiguration config = EBank.getINSTANCE().getConfig();
+        if (config.get(path) instanceof ConfigurationSection configurationSection) {
+            return deserialize(configurationSection.getValues(false));
+        }
+        
+        else return null;
+    }
+    
+    @NotNull
+    public static ItemStack deserialize(@NotNull Map<String, Object> args) {
+        short damage = 0;
+        int amount = 1;
+        
+        if (args.containsKey("damage")) {
+            damage = ((Number) args.get("damage")).shortValue();
+        }
+        
+        int dataVersion = Bukkit.getUnsafe().getDataVersion();
+        Material type = Bukkit.getUnsafe().getMaterial((String) args.get("type"), dataVersion);
+        
+        if (args.containsKey("amount")) {
+            amount = ((Number) args.get("amount")).intValue();
+        }
+        
+        ItemStack result = new ItemStack(type, amount, damage);
+        
+        if (args.containsKey("enchantments")) {
+            Object raw = args.get("enchantments");
+            
+            if (raw instanceof Map) {
+                Map<?, ?> map = (Map<?, ?>) raw;
+                
+                for (Map.Entry<?, ?> entry : map.entrySet()) {
+                    String stringKey = entry.getKey().toString();
+                    stringKey = Bukkit.getUnsafe().get(Enchantment.class, stringKey);
+                    NamespacedKey key = NamespacedKey.fromString(stringKey.toLowerCase(Locale.ROOT));
+                    
+                    Enchantment enchantment = Bukkit.getUnsafe().get(Registry.ENCHANTMENT, key);
+                    
+                    if ((enchantment != null) && (entry.getValue() instanceof Integer)) {
+                        result.addUnsafeEnchantment(enchantment, (Integer) entry.getValue());
+                    }
+                }
+            }
+        } else if (args.containsKey("meta")) {
+            Object raw = args.get("meta");
+            if (raw instanceof ItemMeta) {
+                ((ItemMeta) raw).setVersion(dataVersion);
+                result.setItemMeta((ItemMeta) raw);
+            }
+        }
+        
+        return result;
     }
     
 }

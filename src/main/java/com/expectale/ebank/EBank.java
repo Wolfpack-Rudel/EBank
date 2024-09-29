@@ -4,7 +4,6 @@ import com.expectale.ebank.commands.BankCommand;
 import com.expectale.ebank.commands.BankCreateCommand;
 import com.expectale.ebank.commands.EBankCommand;
 import com.expectale.ebank.commands.tabcompleter.EBankTabCompleter;
-import com.expectale.ebank.database.DatabaseCredentials;
 import com.expectale.ebank.listeners.ItemListeners;
 import com.expectale.ebank.listeners.PlayerListeners;
 import com.expectale.ebank.registry.BankRegistry;

@@ -25,8 +25,6 @@ Account:
   Log-amount: 10
   #%owner% will display the name of the bank owner
   Card:
-    ==: org.bukkit.inventory.ItemStack
-    v: 3955
     type: PAPER
     meta:
       ==: ItemMeta
@@ -74,8 +72,6 @@ Menu:
   Common-items:
     #Visit this link to get more information about itemstack https://www.spigotmc.org/wiki/itemstack-serialization/
     x:
-      ==: org.bukkit.inventory.ItemStack
-      v: 3955
       type: BLACK_STAINED_GLASS_PANE
       meta:
         ==: ItemMeta
@@ -83,8 +79,6 @@ Menu:
         display-name: §a
         custom-model-data: 0
     b:
-      ==: org.bukkit.inventory.ItemStack
-      v: 3955
       type: ARROW
       meta:
         ==: ItemMeta
@@ -92,8 +86,6 @@ Menu:
         display-name: §cBack
         custom-model-data: 0
     c:
-      ==: org.bukkit.inventory.ItemStack
-      v: 3955
       type: BARRIER
       meta:
         ==: ItemMeta
@@ -110,8 +102,6 @@ Menu:
     Title: "Bank menu"
     Items:
       i:
-        ==: org.bukkit.inventory.ItemStack
-        v: 3955
         type: STONE
         meta:
           ==: ItemMeta
@@ -122,8 +112,6 @@ Menu:
             - '§7hours by %interest%% of you total bank amount'
           custom-model-data: 0
       d:
-        ==: org.bukkit.inventory.ItemStack
-        v: 3955
         type: CHEST
         meta:
           ==: ItemMeta
@@ -134,8 +122,6 @@ Menu:
             - '§7%time-left-before-interest% hours before interest'
           custom-model-data: 0
       w:
-        ==: org.bukkit.inventory.ItemStack
-        v: 3955
         type: DROPPER
         meta:
           ==: ItemMeta
@@ -145,8 +131,6 @@ Menu:
             - '§7Current balance %amount%'
           custom-model-data: 0
       l:
-        ==: org.bukkit.inventory.ItemStack
-        v: 3955
         type: GOLD_INGOT
         meta:
           ==: ItemMeta
@@ -156,8 +140,6 @@ Menu:
             - '§7'
           custom-model-data: 0
       a:
-        ==: org.bukkit.inventory.ItemStack
-        v: 3955
         type: GOLD_INGOT
         meta:
           ==: ItemMeta
@@ -167,8 +149,6 @@ Menu:
             - '§7Access card price %card-price%'
           custom-model-data: 0
       z:
-        ==: org.bukkit.inventory.ItemStack
-        v: 3955
         type: ANVIL
         meta:
           ==: ItemMeta
@@ -185,8 +165,6 @@ Menu:
     Title: "Bank create menu"
     Items:
       c:
-        ==: org.bukkit.inventory.ItemStack
-        v: 3955
         type: GOLD_INGOT
         meta:
           ==: ItemMeta
@@ -205,8 +183,6 @@ Menu:
     Title: "Deposit menu"
     Items:
       1:
-        ==: org.bukkit.inventory.ItemStack
-        v: 3955
         type: CHEST
         meta:
           ==: ItemMeta
@@ -217,8 +193,6 @@ Menu:
             - '§7Deposit all your money %player-money-100%'
           custom-model-data: 0
       2:
-        ==: org.bukkit.inventory.ItemStack
-        v: 3955
         type: CHEST
         meta:
           ==: ItemMeta
@@ -229,8 +203,6 @@ Menu:
             - '§7Deposit the half of your money %player-money-50%'
           custom-model-data: 0
       3:
-        ==: org.bukkit.inventory.ItemStack
-        v: 3955
         type: CHEST
         meta:
           ==: ItemMeta
@@ -241,8 +213,6 @@ Menu:
             - '§7Deposit 25% of your money %player-money-25%'
           custom-model-data: 0
       4:
-        ==: org.bukkit.inventory.ItemStack
-        v: 3955
         type: OAK_SIGN
         meta:
           ==: ItemMeta
@@ -261,8 +231,6 @@ Menu:
     Title: "Withdraw menu"
     Items:
       1:
-        ==: org.bukkit.inventory.ItemStack
-        v: 3955
         type: DROPPER
         meta:
           ==: ItemMeta
@@ -273,8 +241,6 @@ Menu:
             - '§7Withdraw all the money %amount%'
           custom-model-data: 0
       2:
-        ==: org.bukkit.inventory.ItemStack
-        v: 3955
         type: DROPPER
         meta:
           ==: ItemMeta
@@ -285,8 +251,6 @@ Menu:
             - '§7Withdraw 50% of the money %amount-50%'
           custom-model-data: 0
       3:
-        ==: org.bukkit.inventory.ItemStack
-        v: 3955
         type: DROPPER
         meta:
           ==: ItemMeta
@@ -297,8 +261,6 @@ Menu:
             - '§7Withdraw 25% of the money %amount-25%'
           custom-model-data: 0
       4:
-        ==: org.bukkit.inventory.ItemStack
-        v: 3955
         type: OAK_SIGN
         meta:
           ==: ItemMeta

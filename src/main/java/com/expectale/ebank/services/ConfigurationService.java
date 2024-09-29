@@ -27,36 +27,36 @@ public class ConfigurationService {
     public static ItemStack CARD_ITEM = CONFIG.getItemStack("Account.Card");
     
     //Menus
-    public static ItemStack MENU_COMMON_CLOSE = ItemUtils.formatItem(CONFIG.getItemStack("Menu.Common-items.c"));
-    public static ItemStack MENU_COMMON_BACK = ItemUtils.formatItem(CONFIG.getItemStack("Menu.Common-items.b"));
-    public static ItemStack MENU_COMMON_BACKGROUND = ItemUtils.formatItem(CONFIG.getItemStack("Menu.Common-items.x"));
+    public static ItemStack MENU_COMMON_CLOSE = ItemUtils.formatItem(ItemUtils.deserialize(("Menu.Common-items.c")));
+    public static ItemStack MENU_COMMON_BACK = ItemUtils.formatItem(ItemUtils.deserialize(("Menu.Common-items.b")));
+    public static ItemStack MENU_COMMON_BACKGROUND = ItemUtils.formatItem(ItemUtils.deserialize(("Menu.Common-items.x")));
     
     public static List<String> MENU_BANK_STRUCTURE = CONFIG.getStringList("Menu.Bank.Structure");
     public static String MENU_BANK_TITLE = CONFIG.getString("Menu.Bank.Title");
-    public static ItemStack MENU_BANK_ITEM_INFO = ItemUtils.formatItem(CONFIG.getItemStack("Menu.Bank.Items.i"));
-    public static ItemStack MENU_BANK_ITEM_DEPOSIT = ItemUtils.formatItem(CONFIG.getItemStack("Menu.Bank.Items.d"));
-    public static ItemStack MENU_BANK_ITEM_WITHDRAW = ItemUtils.formatItem(CONFIG.getItemStack("Menu.Bank.Items.w"));
-    public static ItemStack MENU_BANK_ITEM_LOGS = ItemUtils.formatItem(CONFIG.getItemStack("Menu.Bank.Items.l"));
-    public static ItemStack MENU_BANK_ITEM_ACCESS_CARD = ItemUtils.formatItem(CONFIG.getItemStack("Menu.Bank.Items.a"));
-    public static ItemStack MENU_BANK_ITEM_CODE = ItemUtils.formatItem(CONFIG.getItemStack("Menu.Bank.Items.z"));
+    public static ItemStack MENU_BANK_ITEM_INFO = ItemUtils.formatItem(ItemUtils.deserialize(("Menu.Bank.Items.i")));
+    public static ItemStack MENU_BANK_ITEM_DEPOSIT = ItemUtils.formatItem(ItemUtils.deserialize(("Menu.Bank.Items.d")));
+    public static ItemStack MENU_BANK_ITEM_WITHDRAW = ItemUtils.formatItem(ItemUtils.deserialize(("Menu.Bank.Items.w")));
+    public static ItemStack MENU_BANK_ITEM_LOGS = ItemUtils.formatItem(ItemUtils.deserialize(("Menu.Bank.Items.l")));
+    public static ItemStack MENU_BANK_ITEM_ACCESS_CARD = ItemUtils.formatItem(ItemUtils.deserialize(("Menu.Bank.Items.a")));
+    public static ItemStack MENU_BANK_ITEM_CODE = ItemUtils.formatItem(ItemUtils.deserialize(("Menu.Bank.Items.z")));
     
     public static List<String> MENU_CREATION_STRUCTURE = CONFIG.getStringList("Menu.Creation-menu.Structure");
     public static String MENU_CREATION_TITLE = CONFIG.getString("Menu.Creation-menu.Title");
-    public static ItemStack MENU_CREATION_CREATE = ItemUtils.formatItem(CONFIG.getItemStack("Menu.Creation-menu.Items.c"));
+    public static ItemStack MENU_CREATION_CREATE = ItemUtils.formatItem(ItemUtils.deserialize(("Menu.Creation-menu.Items.c")));
     
     public static List<String> MENU_DEPOSIT_STRUCTURE = CONFIG.getStringList("Menu.Deposit.Structure");
     public static String MENU_DEPOSIT_TITLE = CONFIG.getString("Menu.Deposit.Title");
-    public static ItemStack MENU_DEPOSIT_1 = ItemUtils.formatItem(CONFIG.getItemStack("Menu.Deposit.Items.1"));
-    public static ItemStack MENU_DEPOSIT_2 = ItemUtils.formatItem(CONFIG.getItemStack("Menu.Deposit.Items.2"));
-    public static ItemStack MENU_DEPOSIT_3 = ItemUtils.formatItem(CONFIG.getItemStack("Menu.Deposit.Items.3"));
-    public static ItemStack MENU_DEPOSIT_4 = ItemUtils.formatItem(CONFIG.getItemStack("Menu.Deposit.Items.4"));
+    public static ItemStack MENU_DEPOSIT_1 = ItemUtils.formatItem(ItemUtils.deserialize(("Menu.Deposit.Items.1")));
+    public static ItemStack MENU_DEPOSIT_2 = ItemUtils.formatItem(ItemUtils.deserialize(("Menu.Deposit.Items.2")));
+    public static ItemStack MENU_DEPOSIT_3 = ItemUtils.formatItem(ItemUtils.deserialize(("Menu.Deposit.Items.3")));
+    public static ItemStack MENU_DEPOSIT_4 = ItemUtils.formatItem(ItemUtils.deserialize(("Menu.Deposit.Items.4")));
     
     public static List<String> MENU_WITHDRAW_STRUCTURE = CONFIG.getStringList("Menu.Withdraw.Structure");
     public static String MENU_WITHDRAW_TITLE = CONFIG.getString("Menu.Withdraw.Title");
-    public static ItemStack MENU_WITHDRAW_1 = ItemUtils.formatItem(CONFIG.getItemStack("Menu.Withdraw.Items.1"));
-    public static ItemStack MENU_WITHDRAW_2 = ItemUtils.formatItem(CONFIG.getItemStack("Menu.Withdraw.Items.2"));
-    public static ItemStack MENU_WITHDRAW_3 = ItemUtils.formatItem(CONFIG.getItemStack("Menu.Withdraw.Items.3"));
-    public static ItemStack MENU_WITHDRAW_4 = ItemUtils.formatItem(CONFIG.getItemStack("Menu.Withdraw.Items.4"));
+    public static ItemStack MENU_WITHDRAW_1 = ItemUtils.formatItem(ItemUtils.deserialize(("Menu.Withdraw.Items.1")));
+    public static ItemStack MENU_WITHDRAW_2 = ItemUtils.formatItem(ItemUtils.deserialize(("Menu.Withdraw.Items.2")));
+    public static ItemStack MENU_WITHDRAW_3 = ItemUtils.formatItem(ItemUtils.deserialize(("Menu.Withdraw.Items.3")));
+    public static ItemStack MENU_WITHDRAW_4 = ItemUtils.formatItem(ItemUtils.deserialize(("Menu.Withdraw.Items.4")));
     
     //Message
     public static String MESSAGE_NOT_ENOUGH_MONEY = CONFIG.getString("Message.Not-enough-money");
