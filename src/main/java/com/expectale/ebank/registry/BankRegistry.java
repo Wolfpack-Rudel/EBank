@@ -42,8 +42,10 @@ public class BankRegistry {
     }
     
     public static void remove(UUID uuid) {
-        BankAccount bankAccount = ACCOUNTS.remove(uuid);
+        BankAccount bankAccount = ACCOUNTS.get(uuid);
+        if (bankAccount == null) return;
         save(bankAccount);
+        ACCOUNTS.remove(uuid);
     }
     
     public static void save(BankAccount bankAccount) {
