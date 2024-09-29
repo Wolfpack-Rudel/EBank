@@ -26,6 +26,7 @@ Account:
   #%owner% will display the name of the bank owner
   Card:
     ==: org.bukkit.inventory.ItemStack
+    v: 3955
     type: PAPER
     meta:
       ==: ItemMeta
@@ -74,6 +75,7 @@ Menu:
     #Visit this link to get more information about itemstack https://www.spigotmc.org/wiki/itemstack-serialization/
     x:
       ==: org.bukkit.inventory.ItemStack
+      v: 3955
       type: STONE
       meta:
         ==: ItemMeta
@@ -82,6 +84,7 @@ Menu:
         custom-model-data: 0
     b:
       ==: org.bukkit.inventory.ItemStack
+      v: 3955
       type: ARROW
       meta:
         ==: ItemMeta
@@ -90,6 +93,7 @@ Menu:
         custom-model-data: 0
     c:
       ==: org.bukkit.inventory.ItemStack
+      v: 3955
       type: BARRIER
       meta:
         ==: ItemMeta
@@ -107,6 +111,7 @@ Menu:
     Items:
       i:
         ==: org.bukkit.inventory.ItemStack
+        v: 3955
         type: COBBLESTONE
         meta:
           ==: ItemMeta
@@ -118,6 +123,7 @@ Menu:
           custom-model-data: 0
       d:
         ==: org.bukkit.inventory.ItemStack
+        v: 3955
         type: CHEST
         meta:
           ==: ItemMeta
@@ -129,6 +135,7 @@ Menu:
           custom-model-data: 0
       w:
         ==: org.bukkit.inventory.ItemStack
+        v: 3955
         type: DROPPER
         meta:
           ==: ItemMeta
@@ -139,6 +146,7 @@ Menu:
           custom-model-data: 0
       l:
         ==: org.bukkit.inventory.ItemStack
+        v: 3955
         type: GOLD_INGOT
         meta:
           ==: ItemMeta
@@ -149,6 +157,7 @@ Menu:
           custom-model-data: 0
       a:
         ==: org.bukkit.inventory.ItemStack
+        v: 3955
         type: GOLD_INGOT
         meta:
           ==: ItemMeta
@@ -159,6 +168,7 @@ Menu:
           custom-model-data: 0
       z:
         ==: org.bukkit.inventory.ItemStack
+        v: 3955
         type: ANVIL
         meta:
           ==: ItemMeta
@@ -176,6 +186,7 @@ Menu:
     Items:
       c:
         ==: org.bukkit.inventory.ItemStack
+        v: 3955
         type: GOLD_INGOT
         meta:
           ==: ItemMeta
@@ -195,6 +206,7 @@ Menu:
     Items:
       1:
         ==: org.bukkit.inventory.ItemStack
+        v: 3955
         type: CHEST
         meta:
           ==: ItemMeta
@@ -206,6 +218,7 @@ Menu:
           custom-model-data: 0
       2:
         ==: org.bukkit.inventory.ItemStack
+        v: 3955
         type: CHEST
         meta:
           ==: ItemMeta
@@ -217,6 +230,7 @@ Menu:
           custom-model-data: 0
       3:
         ==: org.bukkit.inventory.ItemStack
+        v: 3955
         type: CHEST
         meta:
           ==: ItemMeta
@@ -228,6 +242,7 @@ Menu:
           custom-model-data: 0
       4:
         ==: org.bukkit.inventory.ItemStack
+        v: 3955
         type: SIGN
         meta:
           ==: ItemMeta
@@ -247,6 +262,7 @@ Menu:
     Items:
       1:
         ==: org.bukkit.inventory.ItemStack
+        v: 3955
         type: DROPPER
         meta:
           ==: ItemMeta
@@ -258,6 +274,7 @@ Menu:
           custom-model-data: 0
       2:
         ==: org.bukkit.inventory.ItemStack
+        v: 3955
         type: DROPPER
         meta:
           ==: ItemMeta
@@ -269,6 +286,7 @@ Menu:
           custom-model-data: 0
       3:
         ==: org.bukkit.inventory.ItemStack
+        v: 3955
         type: DROPPER
         meta:
           ==: ItemMeta
@@ -280,6 +298,7 @@ Menu:
           custom-model-data: 0
       4:
         ==: org.bukkit.inventory.ItemStack
+        v: 3955
         type: SIGN
         meta:
           ==: ItemMeta
