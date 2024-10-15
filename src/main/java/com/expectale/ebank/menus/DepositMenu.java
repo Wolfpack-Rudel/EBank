@@ -146,6 +146,10 @@ public class DepositMenu extends AbstractBankMenu {
             ChatInteractionRegistry.add(player, (p, message) -> {
                 try {
                     int amount = Integer.parseInt(message);
+                    if (amount <= 0) {
+                        p.sendMessage(ConfigurationService.MESSAGE_FORMAT_ERROR);
+                        return;
+                    }
                     Economy economy = EconomyService.getEconomy();
                     
                     if (economy.getBalance(p) < amount) {

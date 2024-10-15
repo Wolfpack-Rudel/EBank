@@ -136,6 +136,10 @@ public class WithdrawMenu extends AbstractBankMenu {
             ChatInteractionRegistry.add(player, (p, message) -> {
                 try {
                     int amount = Integer.parseInt(message);
+                    if (amount <= 0) {
+                        p.sendMessage(ConfigurationService.MESSAGE_FORMAT_ERROR);
+                        return;
+                    }
                     
                     if (bankAccount.getAmount() < amount) {
                         p.sendMessage(ConfigurationService.MESSAGE_BANK_NOT_ENOUGH_MONEY);
